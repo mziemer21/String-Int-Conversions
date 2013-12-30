@@ -1,3 +1,8 @@
+/*
+* FILENAME: strgen.c
+* DESCRIPTION: This program will create a file of random numbers.
+*
+*/
 #include <stdio.h>
 #include <assert.h>
 #include <fcntl.h>
@@ -10,8 +15,12 @@
 long int random(void);
 void srandom(unsigned int seed);
 
-int
-main(int argc, char *argv[])
+/* The first arg is the file name to write to.
+*  The second arg is how many numbers whould be generated.
+* The third arg is  is a random number seed. By changing this value, 
+* you can put a different set of randomly-generated numbers into the file.
+*/
+int main(int argc, char *argv[])
 {
     if (argc != 4) {
 	fprintf(stderr, "usage: strgen <file> <count> <seed>\n");
